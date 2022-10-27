@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+    postgres:
+      image: postgres
+      environment:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+        - POSTGRES_Db=testdatabase
+      ports:
+        - 5432:5432
+      logging:
+        options:
+          max-size: 10m
+          max-file: "3"
+    pgadmin:
+      image: dpage/pgadmin4
+      environment:
+        - PGADMIN_DEFAULT_EMAIL=viktor.ladang@gmail.com
+        - PGADMIN_DEFAULT_PASSWORD=V007
+      ports:
+        - "5050:80"
